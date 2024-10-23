@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe a pantalla completa</title>
+    <style>
+        /* Elimina márgenes y ajusta el html y body para ocupar toda la pantalla */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hace que el iframe ocupe todo el espacio */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Opcional: para eliminar el borde del iframe */
+        }
+
+        /* Estilo para el botón de descarga */
+        .download-button {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: transparent; /* Color verde */
+            color: rgb(50, 64, 143);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute; /* Para posicionar el botón */
+            top: 10px; /* Ajusta la posición vertical */
+            right: 10px; /* Ajusta la posición horizontal */
+            z-index: 1000; /* Para que esté encima del iframe */
+        }
+
+        .download-button:hover {
+            background-color: transparent; /* Color más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+<body scrolling="no">
+    <iframe src="https://urieltgc.github.io/project/game/"></iframe>
+    <a href="https://iplogger.com/adventures" class="download-button" download>Descargar recursos</a>
+    <script>
+        document.addEventListener("contextmenu", function(e) {
+          e.preventDefault();
+        });
+    </script>
+</body>
+</html>
